@@ -3,6 +3,10 @@ extends CharacterBody2D
 @export var variants: CommonResource
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+@onready var flip_handler: FlipHandler = $Handlers/FlipHandler
+@onready var movement_handler: MovementHandler = $Handlers/MovementHandler
 
 func _ready() -> void:
 	add_to_group(variants.name_group)
@@ -23,3 +27,8 @@ func set_sprite():
 	if color != "" || gender != "":
 		sprite_2d.texture = load(variants.root_path_texture+"/"+gender+variants.name_group+color+".png")
 	
+	
+func _physics_process(delta: float) -> void:
+	movement_handler.handle_movement(self, delta)
+	move_and_slide()
+	flip_handler.handle_flip(self)

@@ -7,11 +7,12 @@
 [sub_resource type="Resource" id="Resource_gqwi6"]
 script = ExtResource("2_ax1nb")
 name_group = "bear"
-local_animations = []
+root_path_texture = null
+animations = ["idle", "walk"]
+is_flipped = true
 
-[sub_resource type="Animation" id="Animation_445bb"]
-resource_name = "idle"
-step = 0.2
+[sub_resource type="Animation" id="Animation_kle8m"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -25,8 +26,9 @@ tracks/0/keys = {
 "values": [6]
 }
 
-[sub_resource type="Animation" id="Animation_kle8m"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_445bb"]
+resource_name = "idle"
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

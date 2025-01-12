@@ -10,6 +10,7 @@ color = "blonde__green"
 name_group = "chicken"
 root_path_texture = "res://Entities/Animals/Chickens/Art"
 animations = ["idle", "walk", "sit", "lays", "eat"]
+is_flipped = false
 
 [sub_resource type="Animation" id="Animation_grqu5"]
 length = 0.001
