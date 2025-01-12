@@ -30,10 +30,8 @@ folder_colors={
 
 [layer_names]
 
-2d_physics/layer_1="cow"
-2d_physics/layer_2="chicken"
-2d_physics/layer_3="sheep"
-2d_physics/layer_10="decor"
+2d_physics/layer_1="animals"
+2d_physics/layer_10="limits"
 
 [rendering]
 
