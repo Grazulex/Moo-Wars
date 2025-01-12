@@ -1,7 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://dn113f26qpybx"]
+[gd_scene load_steps=45 format=3 uid="uid://dn113f26qpybx"]
 
-[ext_resource type="Script" path="res://Entities/Animals/Cows_Common/cows_common.gd" id="1_kmjii"]
+[ext_resource type="Script" path="res://Entities/Animals/Cows_Common/Resources/cows_common.gd" id="1_kmjii"]
+[ext_resource type="Script" path="res://Entities/Animals/Common/Resources/animal_healt_resource.gd" id="2_8wemq"]
+[ext_resource type="Script" path="res://Entities/Animals/Common/Resources/animal_texture_resource.gd" id="2_nneuu"]
 [ext_resource type="Texture2D" uid="uid://if5s5llyhwb0" path="res://Entities/Animals/Cows_Common/Art/baby__cow__black.png" id="2_rrjns"]
+[ext_resource type="Script" path="res://Entities/Animals/Common/Resources/animal_food_resource.gd" id="4_e5xcc"]
+[ext_resource type="Script" path="res://Entities/Animals/Common/Resources/animal_link_resource.gd" id="5_c5kbs"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="8_i0sqf"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/guard.gd" id="8_tjaqo"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/all_of_guard.gd" id="9_6ldad"]
@@ -9,6 +13,27 @@
 [ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="10_gu53n"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="11_umpmu"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/expression_guard.gd" id="12_kkh0m"]
+
+[sub_resource type="Resource" id="Resource_nq20w"]
+script = ExtResource("2_nneuu")
+path_to_texture = "res://Entities/Animals/Cows_Common/Art"
+speed_walk_min = 450
+speed_walk_max = 850
+
+[sub_resource type="Resource" id="Resource_00h64"]
+script = ExtResource("2_8wemq")
+starting_happiness = 100
+
+[sub_resource type="Resource" id="Resource_2ondc"]
+script = ExtResource("4_e5xcc")
+active_food_process = true
+minute_between_food = 15
+minute_between_water = 15
+
+[sub_resource type="Resource" id="Resource_jfpb1"]
+script = ExtResource("5_c5kbs")
+active_partner_process = true
+minute_between_partner = 15
 
 [sub_resource type="Animation" id="Animation_ge8ky"]
 length = 0.001
@@ -294,6 +319,10 @@ guards = Array[ExtResource("8_tjaqo")]([SubResource("Resource_nb8v4"), SubResour
 [node name="Cows Common" type="CharacterBody2D" groups=["cow"]]
 collision_mask = 512
 script = ExtResource("1_kmjii")
+texture = SubResource("Resource_nq20w")
+healt = SubResource("Resource_00h64")
+food = SubResource("Resource_2ondc")
+link = SubResource("Resource_jfpb1")
 minute_between_partner = 10
 path_to_texture = "res://Entities/Animals/Cows_Common/Art"
 

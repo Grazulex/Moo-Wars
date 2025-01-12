@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsofbrlt2d64j"]
+
+[ext_resource type="PackedScene" uid="uid://cx6gym1wistwq" path="res://Entities/Animals/Common/base_animal_entity.tscn" id="1_lvm4i"]
+[ext_resource type="Texture2D" uid="uid://cllioa5hke1y0" path="res://Entities/Animals/Bees/Art/bees.png" id="2_hfsrj"]
+[ext_resource type="Script" path="res://Entities/Animals/Common/Resources/common_resource.gd" id="2_i4tna"]
+
+[sub_resource type="Resource" id="Resource_p38xu"]
+script = ExtResource("2_i4tna")
+name_group = "bee"
+local_animations = []
+
+[sub_resource type="Animation" id="Animation_w68c4"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_avyp2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_jg66w"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b2r5m"]
+_data = {
+"RESET": SubResource("Animation_avyp2"),
+"idle": SubResource("Animation_w68c4"),
+"walk": SubResource("Animation_jg66w")
+}
+
+[node name="BeeEntity" instance=ExtResource("1_lvm4i")]
+variants = SubResource("Resource_p38xu")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -8)
+texture = ExtResource("2_hfsrj")
+vframes = 1
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -3)
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_b2r5m")
+}
+autoplay = "idle"

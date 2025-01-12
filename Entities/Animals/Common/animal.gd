@@ -4,6 +4,11 @@ extends CharacterBody2D
 signal find_food
 signal find_water
 
+@export var texture: AnimalTextureResource
+@export var healt: AnimalHealtResource
+@export var food: AnimalFoodResource
+@export var link: AnimalLinkResource
+
 @export_category("Stats")
 @export_subgroup("Healt stats")
 @export var starting_happiness : int = 100
