@@ -7,14 +7,14 @@ extends CharacterBody2D
 
 @onready var flip_handler: FlipHandler = $Handlers/FlipHandler
 @onready var movement_handler: MovementHandler = $Handlers/MovementHandler
-@onready var collision_handler: CollisionHandler = $Handlers/CollisionHandler
+@onready var hit_handler: HitHandler = $Handlers/HitHandler
 
 func _ready() -> void:
 	add_to_group(variants.name_group)
 	set_sprite()
 	movement_handler.initialize(self)
 	flip_handler.initialize(self)
-	collision_handler.initialize(self)
+	hit_handler.initialize(self)
 
 func set_sprite():
 	var properties = variants.get_script().get_script_property_list()
@@ -35,5 +35,5 @@ func set_sprite():
 func _physics_process(delta: float) -> void:
 	movement_handler.handle_movement(delta)
 	move_and_slide()
-	collision_handler.handle_collision(delta)
+	hit_handler.handle_collision(delta)
 	flip_handler.handle_flip()

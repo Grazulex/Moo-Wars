@@ -10,6 +10,9 @@ class_name  MovementHandler
 var direction: Vector2 = Vector2.ZERO
 var character_body= CharacterBody2D
 
+func _ready() -> void:
+	SignalBus.connect("on_hit", on_hit)
+
 func initialize(character: CharacterBody2D) -> void:
 	character_body = character
 	set_direction()
@@ -29,6 +32,12 @@ func handle_deceleration(_delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	set_direction()
+	
+func on_hit(body: Node2D) -> void:
+	if !body.is_in_group("limit"):
+		return
+	direction.x = -direction.x
+	direction.y = -direction.y
 
 func set_direction():
 	randomize()
