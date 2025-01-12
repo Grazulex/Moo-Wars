@@ -26,6 +26,6 @@ shape = SubResource("CircleShape2D_1i378")
 [node name="Handlers" type="Node" parent="."]
 
 [node name="MovementHandler" parent="Handlers" instance=ExtResource("3_l8q03")]
-movement_speed = 400.0
+movement_speed = 350.0
 
 [node name="FlipHandler" parent="Handlers" instance=ExtResource("4_672pn")]

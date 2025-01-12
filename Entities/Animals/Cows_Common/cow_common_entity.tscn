@@ -10,6 +10,7 @@ color = "black"
 name_group = "cow"
 root_path_texture = "res://Entities/Animals/Cows_Common/Art"
 animations = ["idle", "walk", "eat", "drink"]
+is_flipped = false
 
 [sub_resource type="Animation" id="Animation_xsvhy"]
 length = 0.001

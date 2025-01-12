@@ -81,3 +81,6 @@ libraries = {
 "": SubResource("AnimationLibrary_oefnd")
 }
 autoplay = "idle"
+
+[node name="MovementHandler" parent="Handlers" index="0"]
+movement_speed = 100.0

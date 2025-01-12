@@ -138,3 +138,6 @@ libraries = {
 "": SubResource("AnimationLibrary_viyes")
 }
 autoplay = "idle"
+
+[node name="MovementHandler" parent="Handlers" index="0"]
+movement_speed = 450.0
