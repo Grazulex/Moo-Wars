@@ -8,19 +8,21 @@ class_name  MovementHandler
 @onready var timer: Timer = $Timer
 
 var direction: Vector2 = Vector2.ZERO
+var character_body= CharacterBody2D
 
-func _ready() -> void:
+func initialize(character: CharacterBody2D) -> void:
+	character_body = character
 	set_direction()
 
-func handle_movement(character_body: CharacterBody2D, delta: float) -> void:
+func handle_movement(delta: float) -> void:
 	if direction != character_body.velocity:
 		if direction == Vector2.ZERO:
-			handle_deceleration(character_body, delta)
+			handle_deceleration(delta)
 		if direction != Vector2.ZERO:	
 			character_body.velocity = direction * movement_speed * delta
 			character_body.animation_player.play("walk")
 	
-func handle_deceleration(character_body: CharacterBody2D, _delta: float) -> void:
+func handle_deceleration(_delta: float) -> void:
 	character_body.velocity = Vector2.ZERO
 	character_body.animation_player.play("idle")
 

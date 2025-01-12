@@ -2,8 +2,12 @@ extends Node2D
 class_name FlipHandler
 
 var last_velocity_x : int = 0
+var character_body= CharacterBody2D
 
-func handle_flip(character_body: CharacterBody2D) -> void:
+func initialize(character: CharacterBody2D) -> void:
+	character_body = character
+	
+func handle_flip() -> void:
 	if last_velocity_x == character_body.velocity.x:
 		return
 		

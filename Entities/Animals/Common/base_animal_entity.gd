@@ -11,6 +11,8 @@ extends CharacterBody2D
 func _ready() -> void:
 	add_to_group(variants.name_group)
 	set_sprite()
+	movement_handler.initialize(self)
+	flip_handler.initialize(self)
 
 func set_sprite():
 	var properties = variants.get_script().get_script_property_list()
@@ -29,6 +31,6 @@ func set_sprite():
 	
 	
 func _physics_process(delta: float) -> void:
-	movement_handler.handle_movement(self, delta)
+	movement_handler.handle_movement(delta)
 	move_and_slide()
-	flip_handler.handle_flip(self)
+	flip_handler.handle_flip()
