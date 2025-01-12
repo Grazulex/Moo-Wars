@@ -6,11 +6,12 @@ var cow_common_scene = preload("res://Entities/Animals/Cows_Common/cow_common_en
 
 func _ready() -> void:
 	var bear = bear_scene.instantiate()
+	bear.global_position = Vector2(50,50)
 	add_child(bear)
 	
 	var chicken = chicken_scene.instantiate()
 	chicken.variants.color = "black"
-	chicken.global_position = Vector2(50,50)
+	chicken.global_position = Vector2(0,0)
 	add_child(chicken)
 	
 	var cow = cow_common_scene.instantiate()

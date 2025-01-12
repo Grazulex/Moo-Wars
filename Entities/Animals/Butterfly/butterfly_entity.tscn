@@ -9,6 +9,7 @@ script = ExtResource("2_lmvai")
 name_group = "butterfly"
 root_path_texture = null
 animations = ["idle", "walk", "idle_pink", "idle_red", "walk_pink", "walk_red"]
+is_flipped = false
 
 [sub_resource type="Animation" id="Animation_kwki3"]
 length = 0.001
@@ -148,10 +149,13 @@ _data = {
 variants = SubResource("Resource_axv46")
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(0, -9)
+position = Vector2(0, 0)
 texture = ExtResource("2_eu040")
 hframes = 7
 vframes = 10
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
 
 [node name="AnimationPlayer" parent="." index="2"]
 libraries = {

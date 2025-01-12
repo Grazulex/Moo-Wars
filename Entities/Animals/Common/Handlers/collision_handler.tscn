@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://byo061sbfjl5h"]
+
+[ext_resource type="Script" path="res://Entities/Animals/Common/Handlers/collision_handler.gd" id="1_ou8hw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqfb0"]
+
+[node name="CollisionHandler" type="Node2D"]
+script = ExtResource("1_ou8hw")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pqfb0")
+debug_color = Color(0.926402, 0.212593, 0.431196, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

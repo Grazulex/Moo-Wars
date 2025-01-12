@@ -9,6 +9,7 @@ script = ExtResource("2_i4tna")
 name_group = "bee"
 root_path_texture = null
 animations = ["idle", "walk"]
+is_flipped = false
 
 [sub_resource type="Animation" id="Animation_avyp2"]
 length = 0.001
@@ -72,12 +73,12 @@ _data = {
 variants = SubResource("Resource_p38xu")
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(0, -8)
+position = Vector2(0, 0)
 texture = ExtResource("2_hfsrj")
 vframes = 1
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, -3)
+position = Vector2(0, 0)
 
 [node name="AnimationPlayer" parent="." index="2"]
 libraries = {

@@ -130,8 +130,12 @@ _data = {
 variants = SubResource("Resource_orwr1")
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, 0)
 texture = ExtResource("3_l8xaw")
 vframes = 7
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
 
 [node name="AnimationPlayer" parent="." index="2"]
 libraries = {

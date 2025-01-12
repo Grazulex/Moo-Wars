@@ -111,6 +111,12 @@ _data = {
 [node name="CowCommonEntity" instance=ExtResource("1_of8li")]
 variants = SubResource("Resource_chrt7")
 
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
+
 [node name="AnimationPlayer" parent="." index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_w8kl0")

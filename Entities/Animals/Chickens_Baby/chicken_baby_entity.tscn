@@ -10,6 +10,7 @@ color = "black"
 name_group = "chicken_baby"
 root_path_texture = "res://Entities/Animals/Chickens_Baby/Art"
 animations = ["idle", "walk", "egg_move", "out_of_egg"]
+is_flipped = false
 
 [sub_resource type="Animation" id="Animation_tdy4j"]
 length = 0.001
@@ -110,8 +111,12 @@ _data = {
 variants = SubResource("Resource_xoe8k")
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, 0)
 texture = ExtResource("3_74jyl")
 vframes = 7
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
 
 [node name="AnimationPlayer" parent="." index="2"]
 libraries = {
