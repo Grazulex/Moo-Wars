@@ -145,3 +145,6 @@ autoplay = "idle"
 
 [node name="MovementHandler" parent="Handlers" index="0"]
 movement_speed = 450.0
+
+[node name="HitHandler" parent="Handlers" index="2"]
+disabled_time = 3.0
