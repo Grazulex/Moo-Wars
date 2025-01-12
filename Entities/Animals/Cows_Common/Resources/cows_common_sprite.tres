@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="AnimalSpriteResource" load_steps=2 format=3 uid="uid://bx0awgevccw83"]
-
-[ext_resource type="Script" path="res://Entities/Animals/Common/Resources/animal_texture_resource.gd" id="1_67nof"]
-
-[resource]
-script = ExtResource("1_67nof")
-path_to_texture = "res://Entities/Animals/Cows_Common/Art"
-speed_walk_min = 450
-speed_walk_max = 850

@@ -1,34 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccdb8bmufqy1h"]
+[gd_scene load_steps=2 format=3 uid="uid://c6gnirqgv5k8d"]
 
-[ext_resource type="PackedScene" uid="uid://dn113f26qpybx" path="res://Entities/Animals/Cows_Common/cows_common.tscn" id="1_ljset"]
+[ext_resource type="Script" path="res://Tests/animals.gd" id="1_h7xk2"]
 
-[node name="Test Animals" type="Node2D"]
+[node name="TestAnimals" type="Node2D"]
 
 [node name="Animals" type="Node" parent="."]
-
-[node name="Cows Common" parent="Animals" instance=ExtResource("1_ljset")]
-position = Vector2(46, 0)
-
-[node name="Cows Common2" parent="Animals" instance=ExtResource("1_ljset")]
-position = Vector2(-49, 0)
-gender = "female"
-
-[node name="Cows Common3" parent="Animals" instance=ExtResource("1_ljset")]
-gender = "male"
-color = "brown"
-minute_between_partner = 2
-
-[node name="Cows Common4" parent="Animals" instance=ExtResource("1_ljset")]
-position = Vector2(-48, 44)
-
-[node name="Cows Common5" parent="Animals" instance=ExtResource("1_ljset")]
-position = Vector2(-1, 42)
-gender = "female"
-
-[node name="Cows Common6" parent="Animals" instance=ExtResource("1_ljset")]
-position = Vector2(47, 42)
-gender = "male"
-color = "pink"
+script = ExtResource("1_h7xk2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)

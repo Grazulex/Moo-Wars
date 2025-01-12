@@ -7,10 +7,19 @@ extends CharacterBody2D
 func _ready() -> void:
 	add_to_group(variants.name_group)
 	set_sprite()
-	if variants.local_animations:
-		variants.animations.append_array(variants.local_animations)
-		print_debug('Add new animations: ', variants.animations)
 
 func set_sprite():
-	pass
+	var properties = variants.get_script().get_script_property_list()
+	var color = ""
+	var gender = ""
+	for property in properties:	
+		if (property.name == "color" || property.name == "gender"):
+			if !variants.root_path_texture:
+				return
+			if property.name == "color":
+				color = "__"+variants.color
+			if property.name == "gender":
+				gender = variants.gender+"__"
+	if color != "" || gender != "":
+		sprite_2d.texture = load(variants.root_path_texture+"/"+gender+variants.name_group+color+".png")
 	
