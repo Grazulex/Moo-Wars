@@ -5,7 +5,7 @@ class_name HitHandler
 @onready var timer: Timer = $Timer
 
 @export var size_rect: Vector2 = Vector2(16,16)
-@export var disabled_time : float = 0.0
+@export var disabled_time : float = 3.0
 
 var follow_body= CharacterBody2D
 

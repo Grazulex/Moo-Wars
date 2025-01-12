@@ -34,4 +34,4 @@ movement_speed = 350.0
 [node name="FlipHandler" parent="Handlers" instance=ExtResource("4_672pn")]
 
 [node name="HitHandler" parent="Handlers" instance=ExtResource("5_gy043")]
-disabled_time = 10.0
+disabled_time = 5.0
