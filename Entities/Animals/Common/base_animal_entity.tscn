@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx6gym1wistwq"]
+[gd_scene load_steps=11 format=3 uid="uid://cx6gym1wistwq"]
 
 [ext_resource type="Script" path="res://Entities/Animals/Common/base_animal_entity.gd" id="1_anspa"]
 [ext_resource type="Texture2D" uid="uid://if5s5llyhwb0" path="res://Entities/Animals/Cows_Common/Art/baby__cow__black.png" id="1_g5afn"]
 [ext_resource type="PackedScene" uid="uid://c71qjndanld1x" path="res://Entities/Animals/Common/Handlers/movement_handler.tscn" id="3_l8q03"]
 [ext_resource type="PackedScene" uid="uid://7p736cymvsil" path="res://Entities/Animals/Common/Handlers/flip_handler.tscn" id="4_672pn"]
+[ext_resource type="PackedScene" uid="uid://dn4chnqss1s70" path="res://Entities/Animals/Common/Handlers/animation_handler.tscn" id="4_ppfls"]
 [ext_resource type="PackedScene" uid="uid://byo061sbfjl5h" path="res://Entities/Animals/Common/Handlers/hit_handler.tscn" id="5_gy043"]
+[ext_resource type="Script" path="res://Entities/Animals/Common/StatesMachine/idle_state.gd" id="7_gquc7"]
+[ext_resource type="Script" path="res://Entities/Animals/Common/StatesMachine/state_machine.gd" id="7_n7lf0"]
+[ext_resource type="Script" path="res://Entities/Animals/Common/StatesMachine/walk_state.gd" id="8_c348a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1i378"]
 radius = 4.0
@@ -31,7 +35,19 @@ shape = SubResource("CircleShape2D_1i378")
 [node name="MovementHandler" parent="Handlers" instance=ExtResource("3_l8q03")]
 movement_speed = 350.0
 
+[node name="AnimationHandler" parent="Handlers" instance=ExtResource("4_ppfls")]
+
 [node name="FlipHandler" parent="Handlers" instance=ExtResource("4_672pn")]
 
 [node name="HitHandler" parent="Handlers" instance=ExtResource("5_gy043")]
 disabled_time = 5.0
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state_owner")]
+script = ExtResource("7_n7lf0")
+state_owner = NodePath("..")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("7_gquc7")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("8_c348a")

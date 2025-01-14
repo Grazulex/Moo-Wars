@@ -43,3 +43,6 @@ func set_direction():
 	randomize()
 	direction = Vector2(randi_range(-1,1),randi_range(-1,1))
 	timer.start(randi_range(timer_min_range, timer_max_range))
+
+func is_moving() -> bool:
+	return character_body.velocity != Vector2.ZERO
