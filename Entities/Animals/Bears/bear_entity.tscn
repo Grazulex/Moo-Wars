@@ -87,4 +87,6 @@ libraries = {
 autoplay = "idle"
 
 [node name="MovementHandler" parent="Handlers" index="0"]
-movement_speed = 100.0
+movement_speed = 150.0
+timer_min_range = 5
+timer_max_range = 15
