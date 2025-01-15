@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://boy7dye06sqmv"]
+
+[ext_resource type="PackedScene" uid="uid://cukeo7rc7w2b3" path="res://Entities/Props/Common/base_props_entity.tscn" id="1_kbaja"]
+[ext_resource type="Texture2D" uid="uid://frean06cusr2" path="res://Entities/Props/Houses/Art/tiny_house.png" id="2_jky8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouecu"]
+atlas = ExtResource("2_jky8v")
+region = Rect2(480, 192, 48, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuwgj"]
+atlas = ExtResource("2_jky8v")
+region = Rect2(480, 96, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqge3"]
+atlas = ExtResource("2_jky8v")
+region = Rect2(432, 0, 16, 32)
+
+[node name="HousesEntity" instance=ExtResource("1_kbaja")]
+z_index = 20
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="0"]
+position = Vector2(0, 6)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_ouecu")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_iuwgj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." index="2"]
+position = Vector2(4, 16)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_gqge3")

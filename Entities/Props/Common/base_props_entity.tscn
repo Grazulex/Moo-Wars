@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cukeo7rc7w2b3"]
+
+[ext_resource type="Script" path="res://Entities/Props/Common/base_props_entity.gd" id="1_xwvq2"]
+
+[node name="BasePropsEntity" type="Node2D"]
+script = ExtResource("1_xwvq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Handlers" type="Node" parent="."]

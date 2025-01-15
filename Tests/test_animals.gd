@@ -4,7 +4,7 @@ var bear_scene = preload("res://Entities/Animals/Bears/bear_entity.tscn")
 var chicken_scene = preload("res://Entities/Animals/Chickens/chicken_entity.tscn")
 var cow_common_scene = preload("res://Entities/Animals/Cows_Common/cow_common_entity.tscn")
 
-@onready var level: Level = $Level
+@onready var level: Level = $"../Level"
 
 
 func _ready() -> void:

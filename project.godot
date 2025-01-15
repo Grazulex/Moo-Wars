@@ -31,6 +31,11 @@ enabled=PackedStringArray()
 [file_customization]
 
 folder_colors={
+"res://Art/": "red",
+"res://Common/": "orange",
+"res://Entities/": "yellow",
+"res://Levels/": "green",
+"res://Tests/": "teal",
 "res://ai/": "purple",
 "res://assets/": "red",
 "res://ressources/": "orange",
