@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu5o7vg6p2c8f"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_dnbqn"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dnbqn")
+
+[node name="HUD" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = -563.0
+offset_top = -314.0
+offset_right = -488.0
+offset_bottom = -291.0
+text = "Inventory"
+
+[node name="Menu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 489.0
+offset_top = -313.0
+offset_right = 565.0
+offset_bottom = -282.0
+text = "load test
+"
+
+[node name="Main2D" type="Node2D" parent="."]
+
+[node name="Camera" type="Camera2D" parent="Main2D"]
+
+[connection signal="pressed" from="Menu/Button" to="." method="_on_button_pressed"]

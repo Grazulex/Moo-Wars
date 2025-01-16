@@ -13,5 +13,3 @@ script = ExtResource("1_h7xk2")
 
 [node name="Promps" type="Node" parent="."]
 script = ExtResource("3_45ffc")
-
-[node name="Camera2D" type="Camera2D" parent="."]
